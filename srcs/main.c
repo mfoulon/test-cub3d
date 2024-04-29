@@ -12,32 +12,6 @@
 
 #include "cub3d.h"
 
-// void	ft_free(t_program *game, char *msg)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (game->map.map[i])
-// 		free(game->map.map[i++]);
-// 	free(game->map.map);
-// 	free(game->map.filename);
-// 	mlx_destroy_window(game->mlx_ptr, game->win_ptr);
-// 	printf("%s\n", msg);
-// 	exit(EXIT_SUCCESS);
-// }
-
-// int	ft_close(t_program *game)
-// {
-// 	ft_free(game, "WINDOW CLOSED");
-// 	return (0);
-// }
-
-// void	ft_new_window(t_program *game)
-// {
-// 	game->win_ptr = mlx_new_window(game->mlx_ptr, game->screen_w, game->screen_h, "cub3D");
-// 	mlx_hook(game->win_ptr, WIN_CLOSE, 0, ft_close, game);
-// }
-
 int	main(int argc, char **argv)
 {
 	t_program	*game_data;
@@ -65,6 +39,34 @@ int	main(int argc, char **argv)
 	
 }
 
+// void	ft_free(t_program *game, char *msg)
+// {
+// 	int	i;
+
+// 	i = 0;
+// 	while (game->map.map[i])
+// 		free(game->map.map[i++]);
+// 	free(game->map.map);
+// 	free(game->map.filename);
+// 	mlx_destroy_window(game->mlx_ptr, game->win_ptr);
+// 	printf("%s\n", msg);
+// 	exit(EXIT_SUCCESS);
+// }
+
+// int	ft_close(t_program *game)
+// {
+// 	ft_free(game, "WINDOW CLOSED");
+// 	return (0);
+// }
+
+// void	ft_new_window(t_program *game)
+// {
+// 	game->win_ptr = mlx_new_window(game->mlx_ptr, game->screen_w, game->screen_h, "cub3D");
+// 	mlx_hook(game->win_ptr, WIN_CLOSE, 0, ft_close, game);
+// }
+
+
+
 // int	main(int ac, char **av)
 // {
 // 	t_program	game_ptr;
@@ -81,3 +83,5 @@ int	main(int argc, char **argv)
 // 	mlx_loop(game_ptr.mlx);
 // 	return (0);
 // }
+
+

@@ -103,12 +103,12 @@ typedef struct s_player
 {
 	double		x;
 	double		y;
-	double		dx;
+	double		dx;	//direction x
 	double		dy;
-	double		px;
+	double		px;	//position x
 	double		py;
 	double		moovespeed;
-	double		rotspeed;
+	double		rotspeed; //rotate speed
 	bool			is_mooving;
 }	t_player;
 
@@ -150,6 +150,10 @@ typedef struct s_program
 	t_img		tex; //--> t_img?
 
 	t_player	*player;
+	double		pos_x;
+	double		pos_y;
+	double      dir_x;
+	double      dir_y;
 	double		camera_x;
 	double		raydir_x;
 	double		raydir_y;
@@ -162,8 +166,6 @@ typedef struct s_program
 	double		wallx;
 	double		tex_pos;
 	double		tex_step;
-	double		pos_x;
-	double		pos_y;
 	int			r_right;
 	int			m_right;
 	int			r_left;
@@ -219,6 +221,7 @@ int	check_new_line(char *str);
 int	is_charset(char c, char *set);
 int	get_map_len(t_program *ptr);
 void	ft_puterror(char *msg);
+void	*ft_garbage_collector(void *ptr, bool clean);
 
 
 //walls.c//
