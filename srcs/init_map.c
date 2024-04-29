@@ -12,20 +12,35 @@ void	init_color(t_color *color)
 	color->b = -1;
 }
 
-void	init_map(t_map *map)
+void	init_map(t_program *data) // needs argv inside data
 {
-	map->map = NULL;
-	map->row = -1;
-	map->north_texture = NULL;
-	map->south_texture = NULL;
-	map->east_texture = NULL;
-	map->west_texture = NULL;
-	map->filename = NULL;
-	map->starting_pos = '\0';
-	init_color(&map->floor_color);
-	init_color(&map->ceilling_color);
-	map->player.x = 0;
-	map->player.y = 0;
+	int	i;
+	int y;
+
+	check_map(); // to do 
+	data->map = malloc(sizeof(t_map));
+	if (!map)
+		ft_puterror("Error: Map allocation failed\n");
+	map = ft_garbage_collector(map, false);
+	get_map_size(data);
+	i = 0;
+	while (i < data->map->total_height)
+	{
+		y = data->map->total_width;
+		data->map->map[i] = malloc((y + 1) * sizeof(char));
+		data->map->map[i][j] = '\0';
+		ft_garbage_collector(&data->map->map[i], false);
+		i++;
+	}
+	get_map(data);
+	init_map_textures(); // to do
+	data->map->filepath = ft_strjoin("maps/", data->argv[1]);
+	ft_garbage_collector(data->map->filepath, false);
+	
+	// still have unused members?
+	// i think they'll moove to an img part
+	// if don't to do here
+
 }
 
 void	init_game(t_program *game)

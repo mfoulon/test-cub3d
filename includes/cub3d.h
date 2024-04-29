@@ -73,13 +73,10 @@ typedef struct s_map
 	char		**map;
 	int			total_width;
 	int			total_height;
-	int			row;
-	int			col;
 	char		*north_texture;
 	char		*south_texture;
 	char		*west_texture;
 	char		*east_texture;
-	char		*filename;
 	char		*filepath;
 	char		starting_pos; //not used yet
 	t_color		floor_color; //not used yet

@@ -131,9 +131,12 @@ void	get_map(t_program *data)
 			{
 				if (is_charset(line[x], "NSEW"))
 				{
-					data->pos_x = (double)x;
-					data->pos_y = (double)y;
+					data->player->x = (double)x;
+					data->player->y = (double)y;
+					data->map->map[y][x] = '0';
 				}
+				else
+					data->map->map[y][x] = line[x];
 			}
 			else
 				data->map->map[y][x] = line[x];
@@ -153,7 +156,7 @@ void	get_map_size(t_program *data)
 
 	fd = open(data->map->filepath, O_RDONLY);
 	if (fd < 0)
-		return; //erreur
+		ft_puterror("Error : Issue while opening the map"); //erreur
 	line = get_next_line(fd);
 	data->map->total_height = 0;
 	data->map->total_width = 0;
