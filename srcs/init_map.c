@@ -27,3 +27,17 @@ void	init_map(t_map *map)
 	map->player.x = 0;
 	map->player.y = 0;
 }
+
+void	init_game(t_program *game)
+{
+	init_map(&game->map);
+	game->mlx_ptr = mlx_init();
+	game->cub_content = NULL;
+	// game->screen_h = 1024;
+	// game->screen_w = 1024;
+	game->x = 0;
+	ft_new_window(game);
+	ame->img.ptr = mlx_new_image(game->mlx, game->screen_w, game->screen_h);
+	game->img.arr = (int *)mlx_get_data_addr(game->img.ptr, &(game->img.bpp), \
+		&(game->img.len), &(game->img.endian));
+}
